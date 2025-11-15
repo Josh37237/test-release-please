@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Josh37237/test-release-please/compare/v1.1.0...v1.2.0) (2025-11-15)
+
+
+### Features
+
+* Werbebanner ([e3686e2](https://github.com/Josh37237/test-release-please/commit/e3686e2b8c3cd625726ecea07f7fd8bc6271c1f4))
+
 ## [1.1.0](https://github.com/Josh37237/test-release-please/compare/v1.0.1...v1.1.0) (2025-11-15)
 
 
