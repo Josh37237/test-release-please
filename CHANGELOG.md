@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Josh37237/test-release-please/compare/v1.0.0...v1.0.1) (2025-11-15)
+
+
+### Bug Fixes
+
+* Schreibfehler behoben ([d39c197](https://github.com/Josh37237/test-release-please/commit/d39c197f1a0c09f13105f2ca87d9d8e22720b664))
+
 ## 1.0.0 (2025-11-14)
 
 
