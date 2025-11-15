@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Josh37237/test-release-please/compare/v1.2.0...v2.0.0) (2025-11-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* Neues Layout der Webseite
+
+### Features
+
+* Neues Layout der Webseite ([8869fd6](https://github.com/Josh37237/test-release-please/commit/8869fd679b6dceed018fc294436c5930ecb1fa84))
+
 ## [1.2.0](https://github.com/Josh37237/test-release-please/compare/v1.1.0...v1.2.0) (2025-11-15)
 
 
