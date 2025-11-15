@@ -1,39 +1,57 @@
-name: Deploy Docs to gh-pages Branch
-
+name: Deploy MkDocs to GitHub Pages
+ 
 on:
   push:
     branches: [ main ]
     paths:
       - 'docs/**'
-      - 'mkdocs.yml'
+      - 'mkdocs.yml'      # falls mkdocs.yml im Root liegt
   workflow_dispatch:
-
+ 
 permissions:
-  contents: write
-
+  contents: read          # Code lesen
+  pages: write            # auf GitHub Pages deployen
+  id-token: write         # für deploy-pages nötig
+ 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+ 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+ 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+ 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-
+ 
       - name: Install dependencies
-        run: pip install mkdocs mkdocs-material
-
+        run: |
+          pip install mkdocs mkdocs-material
+ 
+      # ⬇️ Falls deine mkdocs.yml in docs/ liegt, ändere die nächste Zeile:
+      # run: mkdocs build --config-file docs/mkdocs.yml --strict
       - name: Build site
         run: mkdocs build --strict
-
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v3
+ 
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
-          publish_branch: main
-
-
+          path: ./site
+ 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+ 
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
