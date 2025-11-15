@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/Josh37237/test-release-please/compare/v1.0.1...v1.1.0) (2025-11-15)
+
+
+### Features
+
+* Dark Mode als Feature Flag ([42c75ab](https://github.com/Josh37237/test-release-please/commit/42c75aba8ff87faec149e363fc5de3c0577c744e))
+
 ## [1.0.1](https://github.com/Josh37237/test-release-please/compare/v1.0.0...v1.0.1) (2025-11-15)
 
 
